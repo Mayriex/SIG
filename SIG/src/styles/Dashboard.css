@@ -1,0 +1,83 @@
+.dashboard h4{
+    font-size: smaller;
+    text-align: center;
+
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    background-color: #ffffff;
+    border-radius: 40px 40px 0 0 ;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.circle-progress{
+    text-align: center;
+    margin-left: 30px;
+}
+
+:where(.css-dev-only-do-not-override-f7vrd6).ant-progress .ant-progress-steps-item-active{
+    background-color:rgb(156, 243, 255);
+}
+
+.modulos :where(.css-dev-only-do-not-override-f7vrd6).ant-progress .ant-progress-steps-item-active{
+    background-color:rgb(255, 255, 255);
+}
+
+.modulos h4:first-child{
+    margin-left: 25px;
+    font-size: smaller;
+}
+
+.modulos{
+    background-color: #ffffff;
+}
+
+:where(.css-dev-only-do-not-override-f7vrd6).ant-progress .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path{
+    stroke: rgb(114, 204, 252);
+}
+
+.card, .card-3{
+    display: flow;
+    background-color: rgba(156, 243, 255, 0.801);;
+    padding: 10px;
+    border-radius: 30% 0 ;
+    width: 40%;
+}
+
+.card-firewall, .card-4{
+    display: flow;
+    background-color: rgba(156, 224, 255, 0.801);;
+    padding: 10px;
+    border-radius: 0 40% ;
+    width: 40%;
+}
+
+.cards h4{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.cards p{
+    text-align: center;
+    margin-top: 0;
+}
+
+.cards{
+    display: flex;
+    margin-inline: 15px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cards img{
+    margin-inline: 5%;
+}
+
+.cards:last-child{
+    margin-bottom: 100px;
+}
