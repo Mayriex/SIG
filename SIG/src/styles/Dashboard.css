@@ -42,18 +42,21 @@
 
 .card, .card-3{
     display: flow;
-    background-color: rgba(156, 243, 255, 0.801);;
+    background-color: rgb(114, 238, 252);
     padding: 10px;
-    border-radius: 30% 0 ;
+    border-radius: 30px 30px 30px 30px ;
     width: 40%;
+    box-shadow: -2px 10px 11px 3px rgba(99, 201, 212, 0.807);
+
 }
 
 .card-firewall, .card-4{
     display: flow;
-    background-color: rgba(156, 224, 255, 0.801);;
+    background-color: rgb(114, 204, 252);
     padding: 10px;
-    border-radius: 0 40% ;
+    border-radius: 30px 30px 30px 30px ;
     width: 40%;
+    box-shadow: -2px 10px 11px 3px rgba(89, 160, 198, 0.852);
 }
 
 .cards h4{
@@ -71,7 +74,7 @@
     display: flex;
     margin-inline: 15px;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .cards img{
