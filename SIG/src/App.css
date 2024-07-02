@@ -1,3 +1,9 @@
 div#root{
   background-color: #f1f1f1!important;
 }
+
+body{
+  width: 100%!important;
+  left: 0!important;;
+  justify-content: center;
+}

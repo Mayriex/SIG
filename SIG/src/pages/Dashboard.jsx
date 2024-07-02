@@ -33,11 +33,11 @@ function Dashboard() {
         </div>
       </div>
 
+
         <div className="modulos">
           <h4>Módulos</h4>
 
           <div className='cards'>
-
           <NavLink to="/profile" className='card-firewall'>
               <img src={Firewall} alt="Logo" style={{ width: '100px', height: '100px' }} />
               <Flex gap="small" vertical>
@@ -79,6 +79,7 @@ function Dashboard() {
           </div>
 
       </div>
+
         </><Menu></Menu></>
     );
 }

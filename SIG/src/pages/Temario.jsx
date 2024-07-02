@@ -5,44 +5,59 @@ import '../styles/Temario.css';
 
 const Temario = () => {
     return (
-        <><div className="temario">
-            <Divider />
-            <Descriptions title="Introducción a la Ciberseguridad" bordered>
-                <Descriptions.Item label="Lección 1">Concepto de ciberseguridad</Descriptions.Item>
-                <Descriptions.Item label="Lección 2">Importancia de la ciberseguridad para los niños</Descriptions.Item>
-                <Descriptions.Item label="Lección 3">Términos básicos: privacidad, datos personales, y contraseñas</Descriptions.Item>
-            </Descriptions>
-            <Divider />
-            
-            <Descriptions title="Contraseñas y Privacidad" bordered>
-                <Descriptions.Item label="Lección 1">Cómo crear y gestionar contraseñas seguras</Descriptions.Item>
-                <Descriptions.Item label="Lección 2">Importancia de mantener las contraseñas en secreto</Descriptions.Item>
-                <Descriptions.Item label="Lección 3">Configuración de privacidad en juegos y redes sociales</Descriptions.Item>
-            </Descriptions>
-
-            <Divider />
-            <Descriptions title="Comportamiento Seguro en Línea" bordered>
-                <Descriptions.Item label="Lección 1">Qué información personal no se debe compartir</Descriptions.Item>
-                <Descriptions.Item label="Lección 2">Reconocer y evitar interacciones peligrosas en línea</Descriptions.Item>
-                <Descriptions.Item label="Lección 3">Cómo utilizar configuraciones de seguridad en aplicaciones y sitios web</Descriptions.Item>
-            </Descriptions>
-            <Divider />
-            
-            <Descriptions title="Riesgos en Línea I" bordered>
-                <Descriptions.Item label="Lección 1">Exposición a desconocidos en línea</Descriptions.Item>
-                <Descriptions.Item label="Lección 2">Compartir información personal</Descriptions.Item>
-                <Descriptions.Item label="Lección 3">Importancia de verificar la autenticidad de los mensajes</Descriptions.Item>
-            </Descriptions>
-            
-            <Divider />
-            <Descriptions title="Riesgos en Línea II" bordered>
-                <Descriptions.Item label="Lección 1">Ciberacoso </Descriptions.Item>
-                <Descriptions.Item label="Lección 2">Grooming</Descriptions.Item>
-                <Descriptions.Item label="Lección 3">Contenido inapropiado</Descriptions.Item>
-                <Descriptions.Item label="Lección 4">Phishing</Descriptions.Item>
-            </Descriptions>
-            <Divider />
-        </div><Menu></Menu></>
+        <><div className='course-content'>
+        <div className='lesson'>
+          <h3>Introducción a la Ciberseguridad</h3>
+          <ul>
+            <li><strong>Lección 1:</strong> Concepto de ciberseguridad</li>
+            <li><strong>Lección 2:</strong> Importancia de la ciberseguridad</li>
+            <li><strong>Lección 3:</strong> Términos básicos</li>
+          </ul>
+        </div>
+        <Divider />
+  
+        <div className='lesson'>
+          <h3>Contraseñas y Privacidad</h3>
+          <ul>
+            <li><strong>Lección 1:</strong> Cómo crear y gestionar contraseñas</li>
+            <li><strong>Lección 2:</strong> Importancia de mantener las contraseñas en secreto</li>
+            <li><strong>Lección 3:</strong> Configuración de privacidad en juegos y redes sociales</li>
+          </ul>
+        </div>
+        <Divider />
+  
+        <div className='lesson'>
+          <h3>Comportamiento Seguro en Línea</h3>
+          <ul>
+            <li><strong>Lección 1:</strong> Qué información personal no se debe compartir</li>
+            <li><strong>Lección 2:</strong> Reconocer y evitar interacciones peligrosas en línea</li>
+            <li><strong>Lección 3:</strong> Cómo utilizar configuraciones de seguridad en aplicaciones y sitios web</li>
+          </ul>
+        </div>
+        <Divider />
+  
+        <div className='lesson'>
+          <h3>Riesgos en Línea I</h3>
+          <ul>
+            <li><strong>Lección 1:</strong> Exposición a desconocidos en línea</li>
+            <li><strong>Lección 2:</strong> Compartir información personal</li>
+            <li><strong>Lección 3:</strong> Importancia de verificar la autenticidad de los mensajes</li>
+          </ul>
+        </div>
+        <Divider />
+  
+        <div className='lesson'>
+          <h3>Riesgos en Línea II</h3>
+          <ul>
+            <li><strong>Lección 1:</strong> Ciberacoso</li>
+            <li><strong>Lección 2:</strong> Grooming</li>
+            <li><strong>Lección 3:</strong> Contenido inapropiado</li>
+            <li><strong>Lección 4:</strong> Phishing</li>
+          </ul>
+        </div>
+        <Divider />
+      </div>
+  <Menu></Menu></>
 
       
     );
