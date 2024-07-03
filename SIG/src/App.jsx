@@ -7,6 +7,9 @@ import Sign from './pages/Sign';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Temario from './pages/Temario';
+import Quiz from './pages/Quiz';
+import PreguntasQuiz from './pages/PreguntasQuiz';
+import Resultados from './pages/Resultados';
 function App() {
   return (
     <div>
@@ -20,6 +23,9 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} /> 
             <Route path='/profile' element={<Profile></Profile>}/>
             <Route path='/temario' element={<Temario></Temario>}/>
+            <Route path='/quiz' element={<Quiz/>} />
+            <Route path='/preguntas-quiz' element={<PreguntasQuiz/>} />
+            <Route path='/resultados' element={<Resultados/>} />
           </Routes>
         </div>
       </Router>

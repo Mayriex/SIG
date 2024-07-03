@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    margin: 0; /* Elimina el margen por defecto */
+    font-family: 'Arial', sans-serif; /* Fuente general */
+    background-color: #f4f4f9; /* Color de fondo suave */
+}
+
+.cuestionario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: auto;
+    padding: 20px; /* Espacio interno alrededor del contenido */
+    gap: 20px;
+    background: white; /* Fondo blanco para el contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.preguntas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre preguntas */
+}
+
+.preguntas:last-child {
+    border-bottom: none; /* Elimina la línea divisoria del último elemento */
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Color del texto */
+}
+
+.ant-radio-wrapper {
+    font-size: 16px; /* Tamaño del texto de las opciones */
+    color: #555; /* Color del texto de las opciones */
+}
+
+.ant-radio:hover .ant-radio-inner,
+.ant-radio-input:focus + .ant-radio-inner {
+    border-color: #1890ff; /* Color del borde al pasar el ratón */
+}
+
+.ant-radio-checked .ant-radio-inner {
+    border-color: #1890ff; /* Color del borde de la opción seleccionada */
+    background-color: #1890ff; /* Color del círculo interior de la opción seleccionada */
+}

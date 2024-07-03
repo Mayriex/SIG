@@ -1,0 +1,28 @@
+/* PreguntasQuiz.css */
+
+.cuestionario {
+    padding-bottom: 80px; /* Espacio para el menú fijo en la parte inferior */
+    min-height: 100vh; /* Altura mínima para que el contenido ocupe toda la pantalla */
+    position: relative; /* Posición relativa para ajustar el espacio del menú */
+}
+
+.preguntas {
+    margin-bottom: 20px; /* Espacio entre cada pregunta */
+}
+
+/* Estilo para el menú fijo en la parte inferior */
+.Menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* Color de fondo del menú */
+    padding: 10px 0; /* Espaciado interno del menú */
+    text-align: center; /* Alineación del contenido del menú */
+    z-index: 100; /* Z-index para que esté por encima del contenido */
+}
+
+/* Ajuste para el botón Submit */
+.ant-btn {
+    margin-top: 20px; /* Espacio superior para separar el botón del menú */
+}
