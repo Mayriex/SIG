@@ -7,19 +7,23 @@ import Sign from './pages/Sign';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Temario from './pages/Temario';
+import Verify from './pages/Verify';
+import Module from './pages/Module';
+
 function App() {
   return (
     <div>
-      <Header></Header>
       <main>
       <Router>
         <div>
           <Routes>
             <Route path="/" element={<Home />} /> 
-            <Route path="/sign" element={<Sign />} /> 
+            <Route path="/sign" element={<Sign />} />
+            <Route path="/verify" element={<Verify />} />
             <Route path="/dashboard" element={<Dashboard />} /> 
             <Route path='/profile' element={<Profile></Profile>}/>
             <Route path='/temario' element={<Temario></Temario>}/>
+            <Route path="/module/:moduleId" element={<Module />} />
           </Routes>
         </div>
       </Router>

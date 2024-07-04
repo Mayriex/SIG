@@ -1,19 +1,48 @@
-import React from 'react'; 
-import '../styles/Dashboard.css'
-import { Button } from 'antd';
-import { Flex, Progress, Slider, Typography } from 'antd';
-import { Card } from 'antd';
-import Firewall from '../assets/firewall.png';
-import Menu from '../components/Menu';
-import { Link } from 'react-router-dom'; // Importar Link desde React Router
+import React, { useEffect, useState } from 'react';
+import '../styles/Dashboard.css';
+import { Progress, Flex } from 'antd';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import Menu from '../components/Menu';
+import { API_URL } from './constants';
 
 function Dashboard() {
-  const { Meta } = Card;
-    const [stepsCount, setStepsCount] = React.useState(5);
-    const [stepsGap, setStepsGap] = React.useState(7);
-    return (
-      <><><div className='dashboard'>
+  const [modules, setModules] = useState([]);
+
+  useEffect(() => {
+    const fetchModules = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await axios.get(`${API_URL}/modulos`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        setModules(response.data);
+
+        // Obtener o inicializar el progreso desde localStorage
+        let progress = JSON.parse(localStorage.getItem('progress')) || {};
+
+        // Actualizar el progreso con los IDs de los módulos obtenidos
+        response.data.forEach(modulo => {
+          if (!progress[modulo.id]) {
+            progress[modulo.id] = { percent: 0 };
+          }
+        });
+
+        // Guardar el progreso actualizado en localStorage
+        localStorage.setItem('progress', JSON.stringify(progress));
+      } catch (error) {
+        console.error('Error al obtener los módulos:', error);
+      }
+    };
+
+    fetchModules();
+  }, []);
+
+  return (
+    <>
+      <div className='dashboard'>
         <div>
           <h4>Avance Módulos </h4>
           <Progress percent={30} steps={5} />
@@ -33,55 +62,27 @@ function Dashboard() {
         </div>
       </div>
 
-
-        <div className="modulos">
-          <h4>Módulos</h4>
-
-          <div className='cards'>
-          <NavLink to="/profile" className='card-firewall'>
-              <img src={Firewall} alt="Logo" style={{ width: '100px', height: '100px' }} />
-              <Flex gap="small" vertical>
-                <Progress percent={50} steps={5} />
-              </Flex>
-              <h4>Firewall</h4>
-              <p>4 Lecciones</p>
+      <div className="modulos">
+        <h4>Módulos</h4>
+        <div className='cards'>
+          {modules.map((modulo) => (
+            <NavLink key={modulo.id} to={`/module/${modulo.id}`} className='card'>
+              <img src={modulo.imagen} alt={modulo.nombre} />
+              <div className='card-content'>
+                <Flex gap="small" vertical>
+                  <Progress percent={50} steps={5} />
+                </Flex>
+                <h4>{modulo.nombre}</h4>
+                <p>{modulo.descripcion}</p>
+              </div>
             </NavLink>
-
-            <NavLink to="/profile" className='card'>
-            <img src={Firewall} alt="Logo" style={{ width: '100px', height: '100px' }} />
-              <Flex gap="small" vertical>
-                <Progress percent={50} steps={5} />
-              </Flex>
-              <h4>Firewall</h4>
-              <p>6 Lecciones</p>
-            </NavLink>
-
-          </div>
-
-          <div className='cards'>
-          <NavLink to="/profile" className='card-3'>
-            <img src={Firewall} alt="Logo" style={{ width: '100px', height: '100px' }} />
-            <Flex gap="small" vertical>
-              <Progress percent={50} steps={5} />
-            </Flex>
-            <h4>Firewall</h4>
-            <p>5 Lecciones</p>
-          </NavLink>
-
-         <NavLink to="/profile" className='card-4'>
-            <img src={Firewall} alt="Logo" style={{ width: '100px', height: '100px' }} />
-            <Flex gap="small" vertical>
-              <Progress percent={50} steps={5} />
-            </Flex>
-            <h4>Firewall</h4>
-            <p>3 Lecciones</p>
-          </NavLink>
-          </div>
-
+          ))}
+        </div>
       </div>
 
-        </><Menu></Menu></>
-    );
+      <Menu />
+    </>
+  );
 }
 
 export default Dashboard;
